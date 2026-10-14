@@ -1,2 +1,3 @@
+export const metadata = {"title": "Dasar Web3 — kmtw", "description": "Pelajari dasar web3 lewat penjelasan dan contoh sederhana di kmtw."};
 import {PublicShell,PageIntro,PageLink} from '../public-shell';
 export default function Page(){return <PublicShell current="/web3"><PageIntro number="KMTW" label="BELAJAR WEB3" title="Mulai dari dasarnya" description="Pilih materi yang ingin dipahami. Kalau baru mulai, baca Wallet dan Keamanan sebelum NFT atau Memecoin."/><section className="end-note"><div className="inline-links"><PageLink href="/wallet">Wallet &amp; jaringan</PageLink><PageLink href="/nft">NFT</PageLink><PageLink href="/memecoin">Memecoin</PageLink><PageLink href="/keamanan">Keamanan</PageLink></div></section></PublicShell>}

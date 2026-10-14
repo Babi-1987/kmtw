@@ -1,3 +1,4 @@
+export const metadata = {"title": "Marketplace NFT — kmtw", "description": "Kenali marketplace NFT Ethereum, Solana, dan Bitcoin serta tautan ke situs resminya."};
 import {PublicShell,PageIntro,PageLink} from '../public-shell';
 const markets=[
  {id:'ethereum',chain:'Ethereum',symbol:'ETH',name:'OpenSea',domain:'opensea.io',url:'https://opensea.io/collections/chain/ethereum',intro:'Koleksi NFT di Ethereum',description:'Jelajahi koleksi, lihat item yang dijual, dan bandingkan aktivitas pasar. Tautan ini langsung membuka kategori Ethereum di OpenSea.',look:'Cek alamat kontrak koleksi, bukan cuma nama atau gambarnya. Perhatikan harga item dan aktivitas penjualan.',source:'https://opensea.io/collections/chain/ethereum',icon:'/marketplaces/opensea.ico'},

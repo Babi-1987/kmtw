@@ -1,3 +1,4 @@
+export const metadata = {"title": "Belajar Web3 — kmtw", "description": "Belajar wallet, NFT, memecoin, keamanan, dan hitungan Web3 dengan bahasa Indonesia yang sederhana."};
 import Link from 'next/link';
 import {VisualTopics} from './visual-topics';
 import {PublicShell,PageLink} from './public-shell';
