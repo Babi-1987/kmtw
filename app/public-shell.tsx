@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type {ReactNode} from 'react';
-import {House,Wallet,Image,Store,Coins,ShieldCheck,CircleHelp,Calculator,BookOpen,ArrowLeftRight} from 'lucide-react';
+import {House,Wallet,Image,Store,Coins,ShieldCheck,CircleHelp,Calculator,BookOpen,ArrowLeftRight,Gift,KeyRound} from 'lucide-react';
 import './landing.css';
 import './editorial.css';
 import {SourceReading} from './source-reading';
@@ -9,11 +9,11 @@ import {ReadToggle,ReadMark} from './read-progress';
 const UPDATED = '2026-10-15';
 function ReadingNotice({current}:{current:string}) {
  if(current==='/') return <section className="reading-notice"><h2>Baru mulai? Baca Keamanan dulu.</h2><p>Kenali seed phrase, approval, dan signature sebelum mencoba wallet atau membuka marketplace.</p><Link href="/keamanan">Mulai dari keamanan →</Link></section>;
- if(['/nft','/nft/lanjutan','/memecoin','/defi'].includes(current)) return <section className="reading-notice"><h2>Baca dulu sebelum lanjut</h2><p>Materi ini buat memahami cara kerja dan istilahnya. Contoh koleksi atau token bukan ajakan beli. Harga, rarity, dan popularitas nggak menjamin aset bisa dijual atau menghasilkan untung.</p><Link href="/keamanan">Pahami keamanan wallet →</Link></section>;
+ if(['/nft','/nft/lanjutan','/memecoin','/defi','/airdrop'].includes(current)) return <section className="reading-notice"><h2>Baca dulu sebelum lanjut</h2><p>Materi ini buat memahami cara kerja dan istilahnya. Contoh koleksi atau token bukan ajakan beli. Harga, rarity, dan popularitas nggak menjamin aset bisa dijual atau menghasilkan untung.</p><Link href="/keamanan">Pahami keamanan wallet →</Link></section>;
  if(current==='/hitungan') return <section className="reading-notice"><h2>Angka di sini adalah ilustrasi</h2><p>Harga, gas, fee, dan royalti dalam contoh bukan tarif terkini. Gunakan biaya dan hasil transaksi lo sendiri saat menghitung.</p></section>;
  return null;
 }
-const links=[{href:'/',label:'Beranda',icon:House},{href:'/wallet',label:'Wallet',icon:Wallet},{href:'/nft',label:'NFT',icon:Image},{href:'/nft/lanjutan',label:'NFT lanjut',icon:BookOpen},{href:'/marketplace',label:'Market',icon:Store},{href:'/memecoin',label:'Memecoin',icon:Coins},{href:'/hitungan',label:'Hitungan',icon:Calculator},{href:'/defi',label:'DeFi',icon:ArrowLeftRight},{href:'/keamanan',label:'Keamanan',icon:ShieldCheck},{href:'/kok-bisa',label:'Kok Bisa?',icon:CircleHelp}];
+const links=[{href:'/',label:'Beranda',icon:House},{href:'/wallet',label:'Wallet',icon:Wallet},{href:'/nft',label:'NFT',icon:Image},{href:'/nft/lanjutan',label:'NFT lanjut',icon:BookOpen},{href:'/marketplace',label:'Market',icon:Store},{href:'/memecoin',label:'Memecoin',icon:Coins},{href:'/hitungan',label:'Hitungan',icon:Calculator},{href:'/defi',label:'DeFi',icon:ArrowLeftRight},{href:'/airdrop',label:'Airdrop',icon:Gift},{href:'/bikin-wallet',label:'Bikin Wallet',icon:KeyRound},{href:'/keamanan',label:'Keamanan',icon:ShieldCheck},{href:'/kok-bisa',label:'Kok Bisa?',icon:CircleHelp}];
 function GithubIcon(){return <svg width="21" height="21" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.79 23.38c.6.11.82-.26.82-.58v-2.23c-3.34.73-4.04-1.42-4.04-1.42-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.21.09 1.85 1.24 1.85 1.24 1.07 1.83 2.81 1.3 3.5.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.34-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.6-2.8 5.63-5.48 5.93.43.37.82 1.1.82 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 .5Z"/></svg>}
 function XIcon(){return <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3l-4.9-7.4L5.5 22H2.3l7.6-8.7L1.8 2h6.5l4.5 6.7L18.9 2Zm-1.1 18h1.7L7.3 4H5.5l12.3 16Z"/></svg>}
 export function PageLink({href,children}:{href:string;children:ReactNode}){return <Link className="text-link" href={href}>{children}</Link>}
