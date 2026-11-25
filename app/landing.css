@@ -48,3 +48,4 @@
 .read-toggle-wrap p{font-size:13px;color:#a4a59a;margin:12px 0 0}
 .read-mark{color:var(--copper)!important;font-size:11px!important}
 @media(max-width:700px){.flow-diagram ol{grid-template-columns:1fr}.flow-diagram li+li::before{content:"↓";left:22px;top:-14px}.flow-diagram h2{font-size:27px}}
+.lesson-visual{display:flex;align-items:center;justify-content:center;width:52px;height:52px;border:1px solid #474b3e;border-radius:4px;color:var(--copper);margin-bottom:22px}
