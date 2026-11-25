@@ -10,7 +10,13 @@ export function ReadMark({href}:{href:string}){
 }
 export function ReadToggle({slug}:{slug:string}){
  const [read,setRead]=useState(false);
- useEffect(()=>{setRead(load().includes(slug));},[slug]);
+ useEffect(()=>{const check=()=>setRead(load().includes(slug));check();window.addEventListener('kmtw-read-changed',check);return ()=>window.removeEventListener('kmtw-read-changed',check);},[slug]);
  function toggle(){const list=load();const next=list.includes(slug)?list.filter(x=>x!==slug):[...list,slug];try{localStorage.setItem(KEY,JSON.stringify(next));}catch{}setRead(!read);window.dispatchEvent(new Event('kmtw-read-changed'));}
  return <div className="read-toggle-wrap"><button type="button" className="read-toggle" aria-pressed={read} onClick={toggle}>{read?'✓ Sudah dibaca — tandai belum dibaca':'Tandai sudah dibaca'}</button><p>Progres lo kesimpen di browser ini aja.</p></div>;
+}
+export function SidebarReadToggle({slug}:{slug:string}){
+ const [read,setRead]=useState(false);
+ useEffect(()=>{const check=()=>setRead(load().includes(slug));check();window.addEventListener('kmtw-read-changed',check);return ()=>window.removeEventListener('kmtw-read-changed',check);},[slug]);
+ function toggle(){const list=load();const next=list.includes(slug)?list.filter(x=>x!==slug):[...list,slug];try{localStorage.setItem(KEY,JSON.stringify(next));}catch{}setRead(!read);window.dispatchEvent(new Event('kmtw-read-changed'));}
+ return <button type="button" className="read-toggle sidebar-toggle" aria-pressed={read} onClick={toggle}>{read?'✓ Sudah dibaca':'Tandai sudah dibaca'}</button>;
 }
